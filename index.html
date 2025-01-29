@@ -15,101 +15,70 @@
 		<div id="page-wrapper">
 
 			<!-- Header -->
-				<div id="header-wrapper">
-					<div id="header" class="container">
+			<div id="header-wrapper">
+				<div id = "testing"></div>
+				<script>
+					fetch('header.html')
+					.then(response => response.text())
+					.then(data => {
+						document.getElementById('testing').innerHTML = data;
+					})
+					.catch(error => console.error('Error loading header:', error));
+				</script>
 
-						<!-- Logo -->
-							<h1 id="logo"><a class = "logoHover" href="/">Wenslo</a></h1>
-
-						<!-- Nav -->
-							<nav id="nav">
-								<ul>
-									<li><a class = "barElement" href="left-sidebar.html">About</a></li>
-									<li><a class = "barElement" href="left-sidebar.html">Projects</a></li>
-									<li class="break"><a class = "barElement" href="left-sidebar.html">Blog</a></li>
-									<li><a class = "barElement" href="left-sidebar.html">Message Board</a></li>
-									<!-- <li>
-										<a href="#">Dropdown</a>
-										<ul>
-											<li><a href="#">Lorem ipsum dolor</a></li>
-											<li><a href="#">Magna phasellus</a></li>
-											<li><a href="#">Etiam dolore nisl</a></li>
-											<li>
-												<a href="#">Phasellus consequat</a>
-												<ul>
-													<li><a href="#">Lorem ipsum dolor</a></li>
-													<li><a href="#">Phasellus consequat</a></li>
-													<li><a href="#">Magna phasellus</a></li>
-													<li><a href="#">Etiam dolore nisl</a></li>
-												</ul>
-											</li>
-											<li><a href="#">Veroeros feugiat</a></li>
-										</ul>
-									</li>
-									<li><a href="left-sidebar.html">Left Sidebar</a></li>
-									<li class="break"><a href="right-sidebar.html">Right Sidebar</a></li>
-									<li><a href="no-sidebar.html">No Sidebar</a></li> -->
-								</ul>
-							</nav>
-
-					</div>
-
-					<!-- Hero -->
-						<section id="hero" class="container">
-							<header>
-								<h2>Wenslo's Home</h2>
-							</header>
-							<p>Some of the projects and content I'm currently working on
-							<br />
-							that can be found on my GitHub!
-							<ul class="actions">
-								<li><a target="_blank" href="https://github.com/Courtesi" class="button">My GitHub</a></li>
-							</ul>
-						</section>
-
-				</div>
+				<!-- Hero -->
+				<section id="hero" class="container">
+					<header>
+						<h2>Wenslo's Home</h2>
+					</header>
+					<p>Some of the projects and content I'm currently working on<br />that can be found on my GitHub!</p>
+					<ul class="actions">
+						<li><a target="_blank" href="https://github.com/Courtesi" class="button">My GitHub</a></li>
+					</ul>
+				</section>
+			</div>
 
 			<!-- Features 1 -->
-				<div class="wrapper">
-					<div class="container">
-						<div class="row">
-							<section class="col-6 col-12-narrower feature">
-								<!-- <div class="image-wrapper first">
-									<a href="#" class="image featured first"><img src="images/pic03.jpg" alt="" /></a>
-								</div> -->
-								<header>
-									<h2>Projects I've worked on!</h2>
-								</header>
-								<p>
-									Some of the projects I've worked on, right here on this website! Isn't that amazing?
-								</p>
+			<div class="wrapper">
+				<div class="container">
+					<div class="row">
+						<section class="col-6 col-12-narrower feature">
+							<!-- <div class="image-wrapper first">
+								<a href="#" class="image featured first"><img src="images/pic03.jpg" alt="" /></a>
+							</div> -->
+							<header>
+								<h2>Projects I've worked on!</h2>
+							</header>
+							<p>
+								Some of the projects I've worked on, right here on this website! Isn't that amazing?
+							</p>
 
-								<!-- Ensuring a website has the proper security features against anyone who interacts 
-									with it is definitely a daunting task! There are a ton of server-side management qualities
-									a secure (hopefully!) website need such as proper firewalls, reverse proxies, automated backups,
-									ssh encryption, server vpn access, and much more to keep a server exposure incident as isolated and
-									safe as possible! -->
-								<ul class="actions">
-									<li><a href="#" class="button">Go to Projects</a></li>
-								</ul>
-							</section>
-							<section class="col-6 col-12-narrower feature">
-								<!-- <div class="image-wrapper">
-									<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
-								</div> -->
-								<header>
-									<h2>My Tech Blog!</h2>
-								</header>
-								<p>This is my personal journal where I talk about my experiences with different technologies.
-									
-								</p>
-								<ul class="actions">
-									<li><a href="#" class="button">Go to Blog</a></li>
-								</ul>
-							</section>
-						</div>
+							<!-- Ensuring a website has the proper security features against anyone who interacts 
+								with it is definitely a daunting task! There are a ton of server-side management qualities
+								a secure (hopefully!) website need such as proper firewalls, reverse proxies, automated backups,
+								ssh encryption, server vpn access, and much more to keep a server exposure incident as isolated and
+								safe as possible! -->
+							<ul class="actions">
+								<li><a href="#" class="button">Go to Projects</a></li>
+							</ul>
+						</section>
+						<section class="col-6 col-12-narrower feature">
+							<!-- <div class="image-wrapper">
+								<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
+							</div> -->
+							<header>
+								<h2>My Tech Blog!</h2>
+							</header>
+							<p>This is my personal journal where I talk about my experiences with different technologies.
+								
+							</p>
+							<ul class="actions">
+								<li><a href="#" class="button">Go to Blog</a></li>
+							</ul>
+						</section>
 					</div>
 				</div>
+			</div>
 
 			<!-- Promo -->
 				<!-- <div id="promo-wrapper">
@@ -156,60 +125,16 @@
 				</div> -->
 
 			<!-- Footer -->
-				<div id="footer-wrapper">
-					<div id="footer" class="container">
-						<header class="major">
-							<h2>Contact me!</h2>
-							<p>If you have any questions about my experience or résumé, please feel free to reach out! </br>
-								I'm looking for networks and experience in the Cybersecurity and Software Engineering industries.</p>
-						</header>
-						<div class="row">
-							<section class="col-6 col-12-narrower">
-								<form method="post" action="#">
-									<div class="row gtr-50">
-										<div class="col-6 col-12-mobile">
-											<input name="name" placeholder="Name" type="text" />
-										</div>
-										<div class="col-6 col-12-mobile">
-											<input name="email" placeholder="Email" type="text" />
-										</div>
-										<div class="col-12">
-											<textarea name="message" placeholder="Message"></textarea>
-										</div>
-										<div class="col-12">
-											<ul class="actions">
-												<li><input type="submit" value="Send Message" /></li>
-												<li><input type="reset" value="Clear form" /></li>
-											</ul>
-										</div>
-									</div>
-								</form>
-							</section>
-							<section class="col-6 col-12-narrower">
-								<div class="row gtr-0">
-									<ul class="divided icons col-6 col-12-mobile">
-										<li class="icon brands fa-github"><a target="_blank" href="https://www.github.com/Courtesi"><span class="extra">GitHub</span></a></li>
-										<li class="icon brands fa-linkedin"><a target="_blank" href="https://www.linkedin.com/in/changcurtis"><span class="extra">LinkedIn</span></a></li>
-										<!-- <li class="icon brands fa-linkedin"><a href="https://github.com/Courtesi"><span class="extra"></span></a></li> -->
-										<!-- <li class="icon brands fa-dribbble"><a href="#"><span class="extra">dribbble.com/</span>untitled</a></li> -->
-									</ul>
-									<ul class="divided icons col-6 col-12-mobile">
-										<li class="icon brands fa-youtube"><a target="_blank" href="https://www.youtube.com/@Wenslo"><span class="extra">Youtube</span></a></li>
-										<li class="icon brands fa-twitch"><a target="_blank" href="https://www.twitch.tv/wenslo"><span class="extra">Twitch</span></a></li>		
-										<!-- <li class="icon brands fa-instagram"><a href="#"><span class="extra">instagram.com/</span>untitled</a></li>
-										<li class="icon brands fa-youtube"><a href="#"><span class="extra">youtube.com/</span>untitled</a></li>
-										<li class="icon brands fa-pinterest"><a href="#"><span class="extra">pinterest.com/</span>untitled</a></li> -->
-									</ul>
-								</div>
-							</section>
-						</div>
-					</div>
-					<div id="copyright" class="container">
-						<ul class="menu">
-							<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-						</ul>
-					</div>
-				</div>
+            <div id = "insert_footer"></div>
+
+            <script>
+                fetch('footer.html')
+                    .then(response => response.text())
+                    .then(data => {
+                    	document.getElementById('insert_footer').innerHTML = data;
+                    })
+                    .catch(error => console.error('Error loading header:', error));
+            </script>
 
 		</div>
 

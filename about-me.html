@@ -1,0 +1,104 @@
+<!DOCTYPE HTML>
+<!--
+	Telephasic by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>About Me</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="left-sidebar is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+            <div id="header-wrapper">
+                <div id = "testing"></div>
+                <script>
+                    fetch('header.html')
+                        .then(response => response.text())
+                        .then(data => {
+                        document.getElementById('testing').innerHTML = data;
+                        })
+                        .catch(error => console.error('Error loading header:', error));
+                </script>
+            </div>
+
+			<!-- Main -->
+            <div class="wrapper">
+                <div class="container" id="main">
+                    <div class="row gtr-150">
+                        <div class="col-4 col-12-narrower">
+
+                            <!-- Sidebar -->
+                            <section id="sidebar">
+                                <section>
+                                    <header>
+                                        <h3>Curtis Chang</h3>
+                                    </header>
+                                    <p> Recently graduated from UCI / Probably coding right now</p>
+                                    <a href="#" class="image featured"><img src="images/profile_photo.jpg" alt="" /></a>
+                                    <p>A recently graduated student eager to expand my knowledge and further develop my skills in front-end development. 
+                                        Particularly focused on improving my web design abilities while continuing to deepen my understanding of cybersecurity 
+                                        to build a strong foundation for my future career. </p>
+                                </section>
+                                <section>
+                                    
+                                </section>
+                            </section>
+
+                        </div>
+                        <div class="col-8 col-12-narrower imp-narrower">
+
+                            <!-- Content -->
+                            <article id="content">
+                                <header>
+                                    <h2>About Me</h2>
+                                    <p><em>I never lose. I either win or I learn.</em> -Nelson Mandela</p>
+                                </header>
+                                <p>Thanks for taking the time to look at my page! I'm an aspiring graduate currently looking for
+                                    experience in the industry. I'm mostly interested in the software engineering and cyber-security industries.
+                                    I have a large amount of experience in technologies surrounding front-end/full-stack web development such as 
+                                    ReactJS, React Native, HTML/CSS/JS, Spring Boot, and Node JS! My current tech stack would be Spring Boot for backend,
+                                    Next.js and tailwindcss for frontend, MySQL for the database, and Amazon Web Services EC2 for cloud hosting (my own home
+                                    for self-hosting). On the cybersecurity side, I love bug bounty hunting and am currently studying for CompTIA Security+!
+                                </p>
+                                <p>
+                                    My priorities right now are Web/API development, studying for certificates, and TryHackMe/HackerOne! If you have any 
+                                    questions or are looking for a motivated, hard-working engineer, please don't be afraid to reach out to me with the
+                                    form down below!
+                                </p>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+			<!-- Footer -->
+            <div id = "insert_footer"></div>
+
+            <script>
+                fetch('footer.html')
+                    .then(response => response.text())
+                    .then(data => {
+                        document.getElementById('insert_footer').innerHTML = data;
+                    })
+                    .catch(error => console.error('Error loading header:', error));
+            </script>
+
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
