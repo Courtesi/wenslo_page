@@ -6,11 +6,11 @@
 -->
 <html>
 	<head>
-		<title>Projects</title>
+		<title>Blog</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-        <link rel="stylesheet" href="assets/css/extra.css" />
+        <!-- <link rel="stylesheet" href="assets/css/blog.css" /> -->
 	</head>
 	<body class="no-sidebar is-preload">
 		<div id="page-wrapper">
@@ -31,7 +31,16 @@
 			<!-- Main -->
             <div class="wrapper">
                 <div class="container" id="main">
-                    <div id = "github" class="row features">
+
+                    <div class="row features">
+                        <section class="col-4 col-12-narrower feature">
+                            <div id = "blog" class="image-wrapper first">
+                                <a href="getting-set-up-apache2.html" class="image featured"><img src="images/ubuntuProxmoxapache.png" alt="" /></a>
+                            </div>
+                            <header>
+                                <h3>Setting up an Ubuntu server with Apache2 on Proxmox</h3>
+                            </header>
+                        </section>
                     </div>
                 </div>
             </div>
@@ -52,23 +61,16 @@
                     .catch(error => console.error('Error loading header:', error));
             </script>
 
-			<script>
-				window.onload = () => {
-					fetchAPIGitHub();
-				}
-			</script>
-
 		</div>
 
 		<!-- Scripts -->
-        <script src="assets/js/jquery.min.js"></script>
-        <script src="assets/js/jquery.dropotron.min.js"></script>
-        <script src="assets/js/browser.min.js"></script>
-        <script src="assets/js/breakpoints.min.js"></script>
-        <script src="assets/js/util.js"></script>
-        <script src="assets/js/main.js"></script>
-        <script src = "assets/js/github.js"></script>
-        <script src="assets/js/messages.js"></script>
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script src="assets/js/messages.js"></script>
 
 	</body>
 </html>

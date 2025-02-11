@@ -1,0 +1,34 @@
+#file-name {
+    font-size: 14px;
+    color: #555;
+}
+
+#network_setup {
+    width: 70%;
+}
+
+#create_vm {
+    width: 20%;
+}
+
+#os_iso_image {
+    width: 50%;
+}
+
+code {
+    background-color: rgb(82, 76, 76);
+    padding: 3px;
+}
+
+#content header p {
+    font-size: 40px;
+}
+
+#content header h2 {
+    font-size: 70px;
+}
+
+#blog {
+    border: 1px solid #1F2B5F;
+    height: 62.5%;
+}

@@ -1,0 +1,84 @@
+2025-02-10T03:45:02.730-08:00  INFO 13208 --- [wenslo_page] [restartedMain] d.w.wenslo_page.WensloPageApplication    : Starting WensloPageApplication using Java 19.0.1 with PID 13208 (C:\Users\cchan\Downloads\wenslo_server\wenslo_page\target\classes started by cchan in C:\Users\cchan\Downloads\wenslo_server\wenslo_page)
+2025-02-10T03:45:02.739-08:00  INFO 13208 --- [wenslo_page] [restartedMain] d.w.wenslo_page.WensloPageApplication    : The following 1 profile is active: "dev"
+2025-02-10T03:45:02.840-08:00  INFO 13208 --- [wenslo_page] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-02-10T03:45:02.840-08:00  INFO 13208 --- [wenslo_page] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-02-10T03:45:04.313-08:00  INFO 13208 --- [wenslo_page] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-10T03:45:04.541-08:00  INFO 13208 --- [wenslo_page] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 217 ms. Found 1 JPA repository interface.
+2025-02-10T03:45:05.728-08:00  INFO 13208 --- [wenslo_page] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-10T03:45:05.747-08:00  INFO 13208 --- [wenslo_page] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-10T03:45:05.747-08:00  INFO 13208 --- [wenslo_page] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-10T03:45:05.823-08:00  INFO 13208 --- [wenslo_page] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-10T03:45:05.824-08:00  INFO 13208 --- [wenslo_page] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2981 ms
+2025-02-10T03:45:06.296-08:00  INFO 13208 --- [wenslo_page] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-10T03:45:06.402-08:00  INFO 13208 --- [wenslo_page] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.5.Final
+2025-02-10T03:45:06.457-08:00  INFO 13208 --- [wenslo_page] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-02-10T03:45:06.861-08:00  INFO 13208 --- [wenslo_page] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-10T03:45:06.906-08:00  INFO 13208 --- [wenslo_page] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-10T03:45:07.328-08:00  INFO 13208 --- [wenslo_page] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7e528d24
+2025-02-10T03:45:07.331-08:00  INFO 13208 --- [wenslo_page] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-10T03:45:07.444-08:00  INFO 13208 --- [wenslo_page] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.32
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-02-10T03:45:08.530-08:00  INFO 13208 --- [wenslo_page] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-10T03:45:08.594-08:00  INFO 13208 --- [wenslo_page] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-10T03:45:09.205-08:00  INFO 13208 --- [wenslo_page] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-02-10T03:45:09.809-08:00  WARN 13208 --- [wenslo_page] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-10T03:45:11.170-08:00  INFO 13208 --- [wenslo_page] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 8 endpoints beneath base path '/actuator'
+2025-02-10T03:45:11.285-08:00  INFO 13208 --- [wenslo_page] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-02-10T03:45:11.443-08:00  INFO 13208 --- [wenslo_page] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-10T03:45:11.462-08:00  INFO 13208 --- [wenslo_page] [restartedMain] d.w.wenslo_page.WensloPageApplication    : Started WensloPageApplication in 9.365 seconds (process running for 10.749)
+2025-02-10T03:45:11.733-08:00  INFO 13208 --- [wenslo_page] [RMI TCP Connection(2)-172.17.208.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-10T03:45:11.733-08:00  INFO 13208 --- [wenslo_page] [RMI TCP Connection(2)-172.17.208.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-10T03:45:11.735-08:00  INFO 13208 --- [wenslo_page] [RMI TCP Connection(2)-172.17.208.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-02-10T04:12:01.165-08:00  INFO 13208 --- [wenslo_page] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-10T04:12:01.628-08:00  INFO 13208 --- [wenslo_page] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-02-10T04:12:01.674-08:00  INFO 13208 --- [wenslo_page] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-02-10T04:12:01.679-08:00  INFO 13208 --- [wenslo_page] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-10T04:12:01.686-08:00  INFO 13208 --- [wenslo_page] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-10T04:29:26.892-08:00  INFO 7720 --- [wenslo_page] [restartedMain] d.w.wenslo_page.WensloPageApplication    : Starting WensloPageApplication using Java 19.0.1 with PID 7720 (C:\Users\cchan\Downloads\wenslo_server\wenslo_page\target\classes started by cchan in C:\Users\cchan\Downloads\wenslo_server\wenslo_page)
+2025-02-10T04:29:26.896-08:00  INFO 7720 --- [wenslo_page] [restartedMain] d.w.wenslo_page.WensloPageApplication    : The following 1 profile is active: "dev"
+2025-02-10T04:29:26.958-08:00  INFO 7720 --- [wenslo_page] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-02-10T04:29:26.958-08:00  INFO 7720 --- [wenslo_page] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-02-10T04:29:28.213-08:00  INFO 7720 --- [wenslo_page] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-10T04:29:28.388-08:00  INFO 7720 --- [wenslo_page] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 164 ms. Found 1 JPA repository interface.
+2025-02-10T04:29:29.430-08:00  INFO 7720 --- [wenslo_page] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-10T04:29:29.456-08:00  INFO 7720 --- [wenslo_page] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-10T04:29:29.456-08:00  INFO 7720 --- [wenslo_page] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-10T04:29:29.532-08:00  INFO 7720 --- [wenslo_page] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-10T04:29:29.532-08:00  INFO 7720 --- [wenslo_page] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2574 ms
+2025-02-10T04:29:29.987-08:00  INFO 7720 --- [wenslo_page] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-10T04:29:30.088-08:00  INFO 7720 --- [wenslo_page] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.5.Final
+2025-02-10T04:29:30.140-08:00  INFO 7720 --- [wenslo_page] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-02-10T04:29:30.519-08:00  INFO 7720 --- [wenslo_page] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-10T04:29:30.562-08:00  INFO 7720 --- [wenslo_page] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-10T04:29:30.972-08:00  INFO 7720 --- [wenslo_page] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3946d720
+2025-02-10T04:29:30.975-08:00  INFO 7720 --- [wenslo_page] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-10T04:29:31.105-08:00  INFO 7720 --- [wenslo_page] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.32
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-02-10T04:29:32.176-08:00  INFO 7720 --- [wenslo_page] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-10T04:29:32.237-08:00  INFO 7720 --- [wenslo_page] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-10T04:29:32.802-08:00  INFO 7720 --- [wenslo_page] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-02-10T04:29:33.374-08:00  WARN 7720 --- [wenslo_page] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-10T04:29:34.602-08:00  INFO 7720 --- [wenslo_page] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 8 endpoints beneath base path '/actuator'
+2025-02-10T04:29:34.713-08:00  INFO 7720 --- [wenslo_page] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-02-10T04:29:34.850-08:00  INFO 7720 --- [wenslo_page] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-10T04:29:34.869-08:00  INFO 7720 --- [wenslo_page] [restartedMain] d.w.wenslo_page.WensloPageApplication    : Started WensloPageApplication in 8.563 seconds (process running for 9.528)
+2025-02-10T04:29:35.324-08:00  INFO 7720 --- [wenslo_page] [RMI TCP Connection(2)-172.17.208.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-10T04:29:35.324-08:00  INFO 7720 --- [wenslo_page] [RMI TCP Connection(2)-172.17.208.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-10T04:29:35.325-08:00  INFO 7720 --- [wenslo_page] [RMI TCP Connection(2)-172.17.208.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-02-10T04:30:05.967-08:00  INFO 7720 --- [wenslo_page] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-10T04:30:06.457-08:00  INFO 7720 --- [wenslo_page] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-02-10T04:30:06.489-08:00  INFO 7720 --- [wenslo_page] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-02-10T04:30:06.493-08:00  INFO 7720 --- [wenslo_page] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-10T04:30:06.499-08:00  INFO 7720 --- [wenslo_page] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

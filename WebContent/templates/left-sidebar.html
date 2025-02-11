@@ -143,6 +143,11 @@
                     .then(response => response.text())
                     .then(data => {
                     	document.getElementById('insert_footer').innerHTML = data;
+
+						document.querySelector("#messageForm input[type='submit']").addEventListener("click", function(event) {
+							event.preventDefault();
+							messageFormHandler();
+						});
                     })
                     .catch(error => console.error('Error loading header:', error));
             </script>
@@ -156,6 +161,7 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="assets/js/messages.js"></script>
 
 	</body>
 </html>

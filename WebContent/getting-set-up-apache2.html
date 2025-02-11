@@ -1,0 +1,223 @@
+<!DOCTYPE HTML>
+<!--
+	Telephasic by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Getting Apache2 Set Up</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+        <link rel="stylesheet" href="assets/css/blog-home.css" />
+	</head>
+	<body class="no-sidebar is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+			<div id="header-wrapper">
+				<div id = "testing"></div>
+				<script>
+				fetch('header.html')
+					.then(response => response.text())
+					.then(data => {
+						document.getElementById('testing').innerHTML = data;
+					})
+					.catch(error => console.error('Error loading header:', error));
+				</script>
+			</div>
+
+			<!-- Main -->
+				<div class="wrapper">
+					<div class="container" id="main">
+
+						<!-- Content -->
+							<article id="content">
+								<header>
+									<h2>Getting a Web Server Set Up: The Basics</h2>
+									<p>Here you can follow my tutorial to install and set up a basic <u>Ubuntu</u> server with <u>Apache2</u> all 
+                                        on <u>Proxmox</u> hardware</p> 
+								</header>
+								<p>Hello, if you're reading this, then that means you decided to pick up self-hosting sometime in your career. That's great!
+                                    Self-hosting is definitely a large task to handle but a fun one at that. There are so many rabbit holes
+                                    to go down but today we're going to keep it simple by first setting up a Ubuntu server with Apache2, primarily for public
+                                    web applications for the internet!
+                                </p>
+                                <a id = "network_setup" class="image featured"><img src="images/network_setup.png" alt="" /></a>
+                                <p>What you see above is my current setup, and we're going to be working on the VM up at the top.</p>
+
+                                <p>Today, I'm going to assume you already have Proxmox set up!</p>
+
+                                <header>
+                                    <p>Creating a VM on Proxmox</p>
+                                </header>
+
+                                <p>First, type in the local IP address and port you set up Proxmox at into your browser. For me, that would be
+                                    <u>192.168.0.18:8006</u>.
+                                </p>
+
+                                <a id = "network_setup" class="image featured"><img src="images/proxmox_url.PNG" alt="" /></a>
+
+                                <p>It should prompt you for a password. Log in with the password you set up.</p>
+
+                                <a id = "network_setup" class="image featured"><img src="images/proxmox_login.PNG" alt="" /></a>
+
+                                <p>Before we do anything, we have to download an Ubuntu ISO from the official website. Head on to
+                                    <u>https://ubuntu.com/download</u>. You will see an option between Desktop and Server. Today, we'll be
+                                    choosing Server.
+                                </p>
+
+                                <a id = "network_setup" class="image featured"><img src="images/ubuntu_download_page.PNG" alt="" /></a>
+
+                                <p>I like downloading the LTS (Long-term support) version to be able to still have support down the line.
+                                    Choose the directory on your local computer you want to store your ISO (identical storage image) in.
+                                </p>
+
+                                <a id = "network_setup" class="image featured"><img src="images/ubuntu_download_button.PNG" alt="" /></a>
+
+                                <p>Once you have the iso downloaded, go back to the Proxmox page.</p>
+
+                                <p>Click on your "local (&lt;name of node&gt;)". You should see an ISO Image section. Click into that and afterwards
+                                    click Upload on the upper part of the screen.
+                                </p>
+
+                                <a id = "network_setup" class="image featured"><img src="images/local_image.PNG" alt="" /></a>
+
+                                <p>Locate the Ubuntu Server ISO image you just downloaded and double click it.
+                                    It should take a couple of minutes to upload but stay on standby till it's done.</p>
+
+                                
+                                <p>Once it's done, right click the node you would like the VM to be on. Click, "Create VM".</p>
+
+                                <a id = "create_vm" class="image featured"><img src="images/createVM.PNG" alt="" /></a>
+
+                                <p>First off, you will have to decide your VM's name. I will choose "tutorial-ubuntu-server".
+                                    But you can name it whatever you want (I like "username-ubuntu-server"). Click next.
+                                </p>
+
+                                <p>Now you're going to have to configure your OS. For ISO Image, select the ISO we just uploaded.
+                                    Keep the rest default. Click next.
+                                </p>
+
+                                <a id = "os_iso_image" class="image featured"><img src="images/os_iso_image.PNG" alt="" /></a>
+
+                                <p>For system, keep it as default (i440fx and SeaBIOS). Click next.</p>
+
+                                <a id = "os_iso_image" class="image featured"><img src="images/create_vm_system.PNG" alt="" /></a>
+
+                                <p>For disks, allocate your disk size. I would put 40 GiB (gigibytes, as opposed to gigabytes GB). Click next.</p>
+
+                                <a id = "os_iso_image" class="image featured"><img src="images/create_vm_disks.PNG" alt="" /></a>
+
+                                <p>For CPU, I like allocating at least 4 cores (if available on your system). Click next. </p>
+
+                                <a id = "os_iso_image" class="image featured"><img src="images/create_vm_cpu.PNG" alt="" /></a>
+
+                                <p>For memory, I like at least 4096 MiB (mebibytes vs megabytes MB).</p>
+
+                                <a id = "os_iso_image" class="image featured"><img src="images/create_vm_memory.PNG" alt="" /></a>
+
+                                <p>Choose your network bridge. Mine is vmbr0.</p>
+
+                                <a id = "os_iso_image" class="image featured"><img src="images/create_vm_network.PNG" alt="" /></a>
+
+                                <p>Click finish. Your VM will be created by Proxmox. Once finished (identified by the lock icon disappearing next to
+                                    to vm), start it up.
+                                </p>
+
+                                <header>
+                                    <p>Installing <u>Ubuntu</u> on your Virtual Machine</p>
+                                </header>
+
+                                <p>You will be prompted to install Ubuntu Server on your VM. Go through the set up.</p>
+
+                                <p>I will choose my English keyboard.</p>
+                                
+                                <p>Continue without updating. You can see that if you update the installer, it will go to version 24.10.1,
+                                    which is the latest version. But we are going to use version 20.08.1 LTS.
+                                </p>
+
+                                <p>Confirm my keyboard layout.</p>
+
+                                <p>Choose Ubuntu Server as the base for my installation.</p>
+
+                                <p>For now, I will keep the IP address my DHCP assigned to me.</p>
+
+                                <a id = "network_setup" class="image featured"><img src="images/ubuntu_install_network_config.PNG" alt="" /></a>
+
+                                <p>Configure your proxy address if you need it, but I do not.</p>
+
+                                <p>Let the mirror location be tested. It should say "This mirror location passed tests." once it's done.</p>
+
+                                <a id = "network_setup" class="image featured"><img src="images/ubuntu_install_mirror.PNG" alt="" /></a>
+
+                                <p>For storage configuration, use an entire disk. Confirm it.</p>
+
+                                <p>Select your profile configuration.</p>
+
+                                <a id = "network_setup" class="image featured"><img src="images/ubuntu_install_profile_config.PNG" alt="" /></a>
+
+                                <p>Skip Ubuntu Pro. Install OpenSSH server. Skip featured server snaps for now. Now you will be installing.</p>
+
+                                <p>Hit reboot once the option is available.</p>
+
+                                <p>After hitting reboot, it might say failed to mount a couple of times. Just hit enter to confirm that you
+                                    "removed your installation medium". Usually, that would be your USB drive but this was a virtual install so no USB 
+                                    drive to be found.
+                                </p>
+
+                                <p>You will now be prompted to login. Type in the usernamd and password you created.</p>
+
+                                <a id = "network_setup" class="image featured"><img src="images/ubuntu_login.PNG" alt="" /></a>
+
+                                <header>
+                                    <p>Installing <u>Apache2</u></p>
+                                </header>
+
+                                <p>There's a lot of configuration that can be done, but for now, let's install <u>Apache2</u>.</p>
+
+                                <p>Type in: <code>sudo apt install apache2</code></p>
+
+                                <p>Type in your password if prompted. Enter y for yes to begin installation.</p>
+
+                                <p>Once it's done installing, you can check the status of your <u>Apache2</u> with: <code>sudo systemctl status apache2</code></p>
+
+                                <p>That should be good for now! In terms of configurations for your Ubuntu server, I like to set up ufw firewall rules,
+                                    set up a static IP address, set up and install cloudflare tunnel, configure fail2ban, and create an ssh key to access my VM.
+                                    These will all be covered in my other tutorials coming soon on my website! Thank you for following this tutorial and I hope
+                                    everything works!
+                                </p>
+							</article>
+					</div>
+				</div>
+
+			<!-- Footer -->
+            <div id = "insert_footer"></div>
+            <script>
+                fetch('footer.html')
+                    .then(response => response.text())
+                    .then(data => {
+                    	document.getElementById('insert_footer').innerHTML = data;
+
+						document.querySelector("#messageForm input[type='submit']").addEventListener("click", function(event) {
+							event.preventDefault();
+							messageFormHandler();
+						});
+                    })
+                    .catch(error => console.error('Error loading header:', error));
+            </script>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+            <script src="assets/js/messages.js"></script>
+
+	</body>
+</html>

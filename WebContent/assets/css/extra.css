@@ -3,13 +3,12 @@
     flex-flow: row nowrap;
 }
 
-/* *{ border: 1px solid black; } */
-
 .progress-bar {
     /* border: 1px solid black; */
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 5px;
+    /* border: 1px solid black; */
 }
 
 .language {
@@ -17,26 +16,25 @@
     border-bottom: none;
     font: inherit;
     margin-top: 10px;
+    font-size: 20px;
 }
 
 .language:hover {
-    color: #FFF;
+    color: #ffffff;
 }
 
 .single-chart {
-    width: 33%;
-    /* justify-content: space-around ; */
-    width: 65px; /* Smaller width for the circle */
-    height: 65px; /* Smaller height for the circle */
-    /* border: 1px solid yellow; */
+    width: 6vw;
+    height: 6vh;
 }
     
 
 .circular-chart {
-    display: block;
+    display: flex;
     margin: 10px auto;
     width: 100%;
     height: 100%;
+    font-size: 12px;
 }
 
 .circle-bg {
@@ -58,36 +56,32 @@
     }
 }
 
-.circular-chart.orange .circle {
-    stroke: #155c8f;
-}
-
 .circular-chart.TypeScript .circle {
     stroke: #3178C6;
 }
 
 .circular-chart.JavaScript .circle {
-    stroke: #F7DF1E;
+    stroke: #F1E05A;
 }
 
 .circular-chart.HTML .circle {
-    stroke: #E24F24;
+    stroke: #E34C26;
 }
 
 .circular-chart.CSS .circle {
-    stroke: #1471B6;
+    stroke: #663399;
 }
 
 .circular-chart.SCSS .circle {
-    stroke: #CF649B;
+    stroke: #C6538C;
 }
 
 .circular-chart.Java .circle {
-    stroke: #E14A3A;
+    stroke: #B07219;
 }
 
 .circular-chart.Python .circle {
-    stroke: #3673A5;
+    stroke: #3572A5;
 }
 
 .percentage {
@@ -102,27 +96,33 @@
     box-sizing: border-box;
 }
 
+.section {
+    display: flex;
+}
+
 .box {
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    width: 400px; /* Reduce the width of the box */
-    height: 150px;
+    width: 20vw;
+    /* min-width: 225px; */
     border: 2px solid #1F2B5F;
     border-radius: 10px; /* Smaller border radius */
-    padding: 15px; /* Reduced padding */
-    background-color: #b46464;
-    font-size: 14px; /* Smaller font size */
+    padding: 15px;
+    background-color: rgb(146, 125, 136);
     background-image: url("images/header.svg");
-    background-image: url("images/overlay.png"), url("images/header.svg"), -moz-linear-gradient(75deg, #83777c 15%, #5b929e 55%);
+    align-items: center;
+    /* background-image: url("images/overlay.png"), url("images/header.svg"), -moz-linear-gradient(75deg, #83777c 15%, #5b929e 55%);
     background-image: url("images/overlay.png"), url("images/header.svg"), -webkit-linear-gradient(75deg, #83777c 15%, #5b929e 55%);
     background-image: url("images/overlay.png"), url("images/header.svg"), -ms-linear-gradient(75deg, #83777c 15%, #5b929e 55%);
-    background-image: url("images/overlay.png"), url("images/header.svg"), linear-gradient(75deg, #83777c 15%, #5b929e 55%);
+    background-image: url("images/overlay.png"), url("images/header.svg"), linear-gradient(75deg, #83777c 15%, #5b929e 55%); */
 }
 
 .box-header {
     display: flex;
-    align-items: center;
+    align-items: left;
     margin-bottom: 10px; /* Smaller margin */
-    gap: 15px;
+    gap: 8px;
 }
 
 .icon {
@@ -132,57 +132,101 @@
 }
 
 .title {
-    font-size: 16px; /* Smaller title font size */
+    font-size: min(3vw, 20px); /* Smaller title font size */
     font-weight: bold;
-    margin-top: 7px;
+    margin-top: 8px;
+    text-decoration: underline;
+    transition: text-decoration 400ms ease;
 }
 
 .box-body {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 items per row */
-    /* display: flex;
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
     align-items: center;
-    justify-content: space-between; */
-    /* flex-wrap: wrap; */
+    position: relative;
+    top: -5px;
+    max-width: 100%;
+    /* border: 1px solid gold; */
+    flex-wrap: wrap;
+    
 }
 
 .progress-container {
     display: flex;
     justify-content: center; /* Center the progress circle */
-    width: 100%; /* Keep the container width full */
 }
-
-
 
 .clickable-header {
     display: block; /* Make the anchor tag a block element to take up full width */
     text-decoration: none;
     border-radius: 10px;
-    border: 1px solid #1F2B5F;
     border: none;
-    width: 108.35%;
-    height: 43%;
     margin-top: -14px;
-    transform: translateX(-3.85%);
+    /* width: 108.35%; height: 40%; */
+    background-size: 100% 200%;
+    align-items: left;
 }
 
 .clickable-header:hover {
     border-radius: 10px;
-    /* border: 1px solid #c8a056; */
-    background-image: url("images/header.svg");
-    background-image: url("images/overlay.png"), url("images/header.svg"), -moz-linear-gradient(75deg, #83777c 15%, #4091a1 55%);
-    background-image: url("images/overlay.png"), url("images/header.svg"), -webkit-linear-gradient(75deg, #83777c 15%, #4091a1 55%);
-    background-image: url("images/overlay.png"), url("images/header.svg"), -ms-linear-gradient(75deg, #83777c 15%, #4091a1 55%);
-    background-image: url("images/overlay.png"), url("images/header.svg"), linear-gradient(75deg, #83777c 15%, #288092 55%);
-    
+    /* background-position: 0 -103%; */
+    -webkit-transition: background-position 1s;
+    -moz-transition: background-position 1s;
+    transition: background-position 0.75s;
+    background-color: rgb(87, 82, 82, 0.4);
+    transform: scale(1.0125);
+    transition: 0.5s;
 }
 .clickable-header:hover .icon {
-    transform: scale(1.1); /* Increases size by 10% */
+    transform: scale(1.2); /* Increases size by 10% */
+    transform: rotate(0.02turn);
 }
 
 .clickable-header:hover .title {
-    color: #c8a056;
+    /* color: #1F2B5F; */
+    text-decoration-color: transparent;
 }
 
+.message-box {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: left;
+    width: 20vw;
+    min-width: 225px;
+    border: 2px solid #1F2B5F;
+    border-radius: 10px;
+    padding: 15px;
+    background-color: rgb(146, 125, 136);
+    background-image: url("images/header.svg");
+}
 
+.name-header {
+    display: flex;
+    flex-direction: row;
+    align-items: left;
+    margin-bottom: 10px; /* Smaller margin */
+    gap: 5px;
+}
+
+.name {
+    font-size: 20px; /* Smaller title font size */
+    font-weight: bold;
+    margin-top: 8px;
+}
+
+.message-body {
+    align-items: left;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
+    font-size:calc(8px + 1vw);
+}
+
+/* .clickable-header {
+    border: 1px solid black;
+} */
+/* .message-box, .name-header, .name, .message-body, .icon {
+    border: 1px solid black;
+} */
 

@@ -1,0 +1,139 @@
+.container {
+    align-items: center;
+    /* justify-content: center; */
+    display: flex;
+}
+
+.editor-container {
+    width: 500%;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 2px solid white;
+    resize: none;
+    max-width: 100%;
+}
+
+.blog-editor-title {
+    text-align: center;
+    margin-bottom: 15px;
+    color: black;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+    color: black;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: transparent;
+    color: black;
+}
+
+#blog-content {
+    max-width: 100%;
+    resize: none;
+    /* overflow-y: hidden; */
+    min-height: 150px;
+}
+
+textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+::placeholder {
+    color: black;
+}
+
+#preview-title {
+    color: black;
+}
+
+.preview-container {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    color: black;
+    max-width: 100%;
+    overflow-wrap: break-word; /* Break long words */
+    word-wrap: break-word; /* Ensure long words break */
+}
+
+.preview-container img {
+    max-width: 100%; /* Makes sure it never overflows its container */
+    max-height: 400px; /* Set a maximum height */
+    height: auto; /* Maintains aspect ratio */
+    width: auto; /* Prevents distortion */
+    display: block; /* Avoids inline spacing issues */
+    margin-top: 10px;
+}
+
+
+#preview-image {
+    max-width: 100%;
+    height: auto;
+    display: none;
+    margin-top: 10px;
+}
+
+#preview-content {
+    width: 100%;
+    word-wrap: break-word; /* Break words if too long */
+    overflow-wrap: break-word; /* Ensures proper wrapping */
+    white-space: pre-wrap; /* Maintains line breaks */
+    overflow-x: hidden; /* Prevents horizontal overflow */
+}
+
+.btn {
+    display: inline-block;
+    background: transparent;
+    color: black;
+    padding: 10px 15px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 16px;
+    border: 1px solid white;
+}
+
+.file-upload {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.custom-file-label {
+    background-color: transparent;
+    color: black;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    display: inline-block;
+    border: 1px solid white;
+}
+
+.custom-file-label:hover {
+    border: 1px solid #c8a056;
+    border-radius: 5px;
+    font-size: 16px;
+    display: inline-block;
+    color: #c8a056;
+}
+
+input[type="file"] {
+    display: none; /* Hide default file input */
+}
+

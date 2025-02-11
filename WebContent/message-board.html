@@ -6,11 +6,11 @@
 -->
 <html>
 	<head>
-		<title>Projects</title>
+		<title>Message Board</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-        <link rel="stylesheet" href="assets/css/extra.css" />
+		<link rel="stylesheet" href="assets/css/extra.css" />
 	</head>
 	<body class="no-sidebar is-preload">
 		<div id="page-wrapper">
@@ -29,12 +29,12 @@
 			</div>
 
 			<!-- Main -->
-            <div class="wrapper">
-                <div class="container" id="main">
-                    <div id = "github" class="row features">
-                    </div>
-                </div>
-            </div>
+				<div class="wrapper">
+					<div class="container" id="main">
+						<div id ="message_board" class="row features">
+						</div>
+					</div>
+				</div>
 
 			<!-- Footer -->
             <div id = "insert_footer"></div>
@@ -54,21 +54,20 @@
 
 			<script>
 				window.onload = () => {
-					fetchAPIGitHub();
+					fetchMessages();
 				}
 			</script>
 
 		</div>
 
 		<!-- Scripts -->
-        <script src="assets/js/jquery.min.js"></script>
-        <script src="assets/js/jquery.dropotron.min.js"></script>
-        <script src="assets/js/browser.min.js"></script>
-        <script src="assets/js/breakpoints.min.js"></script>
-        <script src="assets/js/util.js"></script>
-        <script src="assets/js/main.js"></script>
-        <script src = "assets/js/github.js"></script>
-        <script src="assets/js/messages.js"></script>
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script src="assets/js/messages.js"></script>
 
 	</body>
 </html>

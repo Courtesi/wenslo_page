@@ -1,22 +1,36 @@
-import { Octokit } from "https://esm.sh/@octokit/core@4.2.2";
-
-// const GIT_KEY = config.API_KEY;
-// const username = "Courtesi";
-// const octokit = new Octokit({ auth: GIT_KEY,});
-
-window.onload = () => {
-    fetchAPIGitHub();
-}
-
 function fetchAPIGitHub() {
-    fetch("projects", {
+    fetch("/api/projects-official", {
         method: "GET",
-        headers: {
-            "Content-Type": "application/json"
-        }
     })
         .then(response => {
             if (!response.ok) {
+                const tempData = [
+                    {
+                        "id": 0,
+                        "name": "anime_recommender",
+                        "html_url": "https://github.com/Courtesi/anime_recommender",
+                        "description": "Anime recommendation system using content-based filtering",
+                        "languages": {
+                            "CSS": 3682,
+                            "HTML": 1405,
+                            "Python": 20999,
+                            "JavaScript": 2500
+                        },
+                        "updated_at": "2025-01-30T21:15:37.000+00:00"
+                    },
+                    {
+                        "id": 0,
+                        "name": "tic_tac_toe",
+                        "html_url": "https://github.com/Courtesi/tic_tac_toe",
+                        "description": "Tic-Tac-Toe (playable in the terminal)",
+                        "languages": {
+                            "Python": 33200
+                        },
+                        "updated_at": "2025-02-07T10:30:49.000+00:00"
+                    }
+                ];
+                handleAPIGitHub(tempData);
+                alert(`Server says: (${response.status})`);
                 throw new Error(`HTTP Error! Status: ${response.status}`)
             }
             return response.json();
@@ -28,7 +42,6 @@ function fetchAPIGitHub() {
 }
 
 function handleAPIGitHub(data) {
-    console.log(data);
     const container = document.getElementById('github');
 
     // Sort repositories by 'updated_at' in descending order (most recent first)
@@ -64,20 +77,9 @@ function handleAPIGitHub(data) {
         const boxBody = document.createElement("div");
         boxBody.className = "box-body";
 
-        //Attach language info to boxBody
-        fetch(`/projects/${v.name}/languages`, {
-            method: "GET",
-            headers: {"Content-Type": "application/json"
-            }
-        })
-            .then(response => {
-                if (!response.ok) {throw new Error(`HTTP Error! Status: ${response.status}`)}
-                return response.json();
-            })
-            .then(languages => {
-                handleAPIGitHubLanguages(languages, boxBody)
-            })
-            .catch(error => console.error(`Error fetching languages for project ${v.name}:`, error));
+        const languages = v.languages;
+        
+        handleAPIGitHubLanguages(languages, boxBody);
 
         //Attaching elements (divs, a tags, h3) to <div class="github"></div>
         boxHeader.appendChild(title);
@@ -100,34 +102,34 @@ function handleAPIGitHubLanguages(data, boxBody) {
     let sortedLanguages = Object.entries(data)
         .sort((a, b) => b[1] - a[1]);
 
-    sortedLanguages = sortedLanguages.slice(0, 3);
+    // sortedLanguages = sortedLanguages.slice(0, 3);
 
     sortedLanguages.forEach(([language, size]) => {
         const number = (size / totalSize) * 100;
         const percentage = Math.round(number);
         const shownPercentage = number.toFixed(2);
-        const innerString = `<div class="box-body">
-                                        <div class="progress-container">
-                                            <div class ="progress-bar">
-                                                <div class="single-chart">
-                                                    <svg viewBox="0 0 36 36" class="circular-chart ${language}">
-                                                        <path class="circle-bg"
-                                                        d="M18 2.0845
-                                                            a 15.9155 15.9155 0 0 1 0 31.831
-                                                            a 15.9155 15.9155 0 0 1 0 -31.831"
-                                                        />
-                                                        <path class="circle"
-                                                        stroke-dasharray="${percentage}, 100"
-                                                        d="M18 2.0845
-                                                            a 15.9155 15.9155 0 0 1 0 31.831
-                                                            a 15.9155 15.9155 0 0 1 0 -31.831"
-                                                        />
-                                                        <text x="18" y="20.35" class="percentage">${shownPercentage}%</text>
-                                                    </svg>
-                                                </div>
-                                                <a class = "language">${language}</a>
-                                            </div>
-                                        </div>`
+        const innerString = `<div class="progress-container">
+                                <div class ="progress-bar">
+                                    <div class="single-chart">
+                                        <svg viewBox="0 0 36 36" class="circular-chart ${language}">
+                                            <path class="circle-bg"
+                                            d="M18 2.0845
+                                                a 15.9155 15.9155 0 0 1 0 31.831
+                                                a 15.9155 15.9155 0 0 1 0 -31.831"
+                                            />
+                                            <path class="circle"
+                                            stroke-dasharray="${percentage}, 100"
+                                            d="M18 2.0845
+                                                a 15.9155 15.9155 0 0 1 0 31.831
+                                                a 15.9155 15.9155 0 0 1 0 -31.831"
+                                            />
+                                            <text x="18" y="20.35" class="percentage">${shownPercentage}%</text>
+                                        </svg>
+                                    </div>
+                                    <a class = "language">${language}</a>
+                                </div>
+                            </div>`
+                                        
         boxBody.innerHTML += innerString
     })
 }

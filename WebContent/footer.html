@@ -1,26 +1,32 @@
 <div id="footer-wrapper">
     <div id="footer" class="container">
         <header class="major">
-            <h2>Contact me!</h2>
+            <h2>Post on my public Message Board! (your email will not be exposed)</h2>
             <p>If you have any questions about my experience or résumé, please feel free to reach out! </br>
                 I'm looking for networks and experience in the Cybersecurity and Software Engineering industries.</p>
         </header>
         <div class="row">
             <section class="col-6 col-12-narrower">
-                <form method="post" action="#">
+                <form id="messageForm" >
                     <div class="row gtr-50">
                         <div class="col-6 col-12-mobile">
-                            <input name="name" placeholder="Name" type="text" />
+                            <input id="name" name="name" placeholder="Name" type="text" />
                         </div>
                         <div class="col-6 col-12-mobile">
-                            <input name="email" placeholder="Email" type="text" />
+                            <input id="email" name="email" placeholder="Email" type="text" />
                         </div>
                         <div class="col-12">
-                            <textarea name="message" placeholder="Message"></textarea>
+                            <textarea id="message_text" name="message_text" placeholder="Message"></textarea>
+                        </div>
+                        <div>
+                            <input type="hidden" id="test"
+                                name="${_csrf.parameterName}"
+                                value="${_csrf.token}"/>
+                            </form>
                         </div>
                         <div class="col-12">
                             <ul class="actions">
-                                <li><input type="submit" value="Send Message" /></li>
+                                <li><input type="submit" value="Send Message" onclick=""/></li>
                                 <li><input type="reset" value="Clear form" /></li>
                             </ul>
                         </div>
