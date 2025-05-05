@@ -1,0 +1,17 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile.build  # Special Dockerfile for building WAR
+    image: builder-image
+    volumes:
+      - ./target:/app/target  # Persist the built WAR
+
+  tomcat:
+    image: tomcat:9.0
+    ports:
+      - "8181:8080"
+    volumes:
+      - ./target/ROOT.war:/usr/local/tomcat/webapps/ROOT.war
+    depends_on:
+      - app
