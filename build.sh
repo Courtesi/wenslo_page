@@ -1,5 +1,5 @@
 #!/bin/sh
-sudo mv ../application-prod.properties src/main/resources/
+sudo cp ../application-prod.properties src/main/resources/
 sudo chmod +x mvnw
 sudo mvn clean install
 sudo mkdir -p target/dependency && (cd target/dependency; sudo jar -xf ../*.jar)
