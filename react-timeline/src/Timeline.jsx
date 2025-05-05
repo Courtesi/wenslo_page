@@ -114,7 +114,7 @@ export default function Timeline() {
                             <div>This page highlights the important parts of my education, projects, and experience! I'm a software engineer 
                                 who's currently looking to have his chance in the industry. I'm interested in creating projects that support
                                 niches around the world. If you have an idea, don't feel afraid to let me know and if you're hiring, 
-                                please contact me. Test changes!
+                                please contact me.
                             </div>
                         </div>
                         <div className="flex gap-5 justify-end mt-10">
