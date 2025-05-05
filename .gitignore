@@ -52,8 +52,7 @@ build/
 /react-timeline/*.local
 
 # Editor directories and files
-/react-timeline/.vscode/*
-/react-timeline/!.vscode/extensions.json
+/react-timeline/.vscode/
 /react-timeline/.idea
 /react-timeline/.DS_Store
 /react-timeline/*.suo
