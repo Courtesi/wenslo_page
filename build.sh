@@ -1,8 +1,20 @@
 #!/bin/sh
-sudo cp ../application-prod.properties src/main/resources/
-sudo chmod +x mvnw
-sudo mvn clean install
-sudo mkdir -p target/dependency && (cd target/dependency; sudo jar -xf ../*.jar)
-sudo docker build -t wenslo-page .
-#sudo ./mvnw spring-boot:build-image -Dspring-boot.build-image.imageName=wenslo-page
-sudo docker run -p 8080:8080 -d wenslo-page
+
+# Build and run with Docker Compose
+echo "Building and starting services with Docker Compose..."
+
+# Copy production properties if needed
+if [ -f "../application-prod.properties" ]; then
+    sudo cp ../application-prod.properties backend/src/main/resources/
+fi
+
+# Build and start all services
+sudo docker-compose down
+sudo docker-compose build
+sudo docker-compose up -d
+
+# Show logs
+echo ""
+echo "Services started! View logs with: docker-compose logs -f"
+echo "Frontend: http://localhost"
+echo "Backend:  http://localhost:8080"

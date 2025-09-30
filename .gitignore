@@ -1,62 +1,78 @@
-HELP.md
-target/
-!.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
+# ==== BACKEND (Spring Boot) ====
+backend/target/
+backend/.mvn/wrapper/maven-wrapper.jar
+!backend/**/src/main/**/target/
+!backend/**/src/test/**/target/
+backend/.env
 
 ### STS ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
+backend/.apt_generated
+backend/.classpath
+backend/.factorypath
+backend/.project
+backend/.settings
+backend/.springBeans
+backend/.sts4-cache
 
 ### IntelliJ IDEA ###
-.idea
-*.iws
-*.iml
-*.ipr
+backend/.idea
+backend/*.iws
+backend/*.iml
+backend/*.ipr
 
 ### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
-build/
-!**/src/main/**/build/
-!**/src/test/**/build/
-/react-timeline/node_modules/
-/react-time
+backend/nbproject/private/
+backend/nbbuild/
+backend/dist/
+backend/nbdist/
+backend/.nb-gradle/
+backend/build/
+!backend/**/src/main/**/build/
+!backend/**/src/test/**/build/
 
-### VS Code ###
-.vscode/
-
-/src/main/resources/application-dev.properties
-/src/main/resources/application-prod.properties
-
-# Logs
-
-/react-timeline/logs
-/react-timeline/*.log
-/react-timeline/npm-debug.log*
-/react-timeline/yarn-debug.log*
-/react-timeline/yarn-error.log*
-/react-timeline/pnpm-debug.log*
-/react-timeline/lerna-debug.log*
-/react-timeline/node_modules
-# dist
-/react-timeline/dist-ssr
-/react-timeline/*.local
+# ==== FRONTEND (React/Node) ====
+frontend/node_modules/
+frontend/dist/
+frontend/dist-ssr/
+frontend/.vite/
+frontend/logs/
+frontend/*.log
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+frontend/pnpm-debug.log*
+frontend/lerna-debug.log*
+frontend/*.local
 
 # Editor directories and files
-/react-timeline/.vscode/
-/react-timeline/.idea
-/react-timeline/.DS_Store
-/react-timeline/*.suo
-/react-timeline/*.ntvs*
-/react-timeline/*.njsproj
-/react-timeline/*.sln
-/react-timeline/*.sw?
+frontend/.vscode/
+frontend/.idea/
+frontend/.DS_Store
+frontend/*.suo
+frontend/*.ntvs*
+frontend/*.njsproj
+frontend/*.sln
+frontend/*.sw?
+
+# ==== GLOBAL ====
+### IDE ###
+.idea/
+.vscode/
+*.iml
+
+### Environment Variables (IMPORTANT!) ###
+.env
+.env.local
+.env.production
+backend/.env
+frontend/.env
+
+### Docker ###
+.dockerignore
+
+### OS ###
+.DS_Store
+Thumbs.db
+
+### Logs ###
+*.log
