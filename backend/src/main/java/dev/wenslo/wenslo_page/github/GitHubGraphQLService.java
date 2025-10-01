@@ -6,7 +6,8 @@ import dev.wenslo.wenslo_page.Command;
 import dev.wenslo.wenslo_page.exceptions.GitHubParsingException;
 import dev.wenslo.wenslo_page.github.models.ProjectDTO;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.cache.annotation.CachePut;
+//import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.*;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -31,7 +32,7 @@ public class GitHubGraphQLService implements Command<String, List<ProjectDTO>> {
     }
 
     @Override
-    @CachePut(value = "graphQLGitHubCache", key = "'myGraphQLGitHubProjects'")
+    @Cacheable(value = "graphQLGitHubCache", key = "'myGraphQLGitHubProjects'")
     public ResponseEntity<List<ProjectDTO>> execute(String username) {
         // 1️⃣ Define GraphQL Query (Now includes `updatedAt`)
         String graphqlQuery = "{ \"query\": \"{ user(login: \\\"" + username + "\\\") { repositories(first: 100) { nodes { name url description updatedAt languages(first: 10) { edges { size node { name } } } } } } }\" }";

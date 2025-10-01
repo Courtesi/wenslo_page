@@ -4,9 +4,9 @@
 echo "Building and starting services with Docker Compose..."
 
 # Copy production properties if needed
-if [ -f "../application-prod.properties" ]; then
-    sudo cp ../application-prod.properties backend/src/main/resources/
-fi
+# if [ -f "../application-prod.properties" ]; then
+#     sudo cp ../application-prod.properties backend/src/main/resources/
+# fi
 
 # Build and start all services
 sudo docker-compose down

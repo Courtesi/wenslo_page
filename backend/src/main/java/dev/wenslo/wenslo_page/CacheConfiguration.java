@@ -21,23 +21,11 @@ public class CacheConfiguration {
     public CacheManager cacheManager() {
         ConcurrentMapCacheManager manager = new ConcurrentMapCacheManager();
         manager.setAllowNullValues(false);
-        manager.setCacheNames(Arrays.asList("graphQLGitHubCache", "messageBoardCache"));
+        manager.setCacheNames(Arrays.asList("graphQLGitHubCache"));
         return manager;
     }
 
-//    @CacheEvict(value = "gitHubCache", allEntries = true)
-//    @Scheduled(fixedDelay = 300000, initialDelay = 0)
-//    public void evictGitHubProjectsCache() {System.out.println("Evicting GitHub Cache");}
-//
-//    @CacheEvict(value = "languagesCache", allEntries = true)
-//    @Scheduled(fixedDelay = 300000, initialDelay = 0)
-//    public void evictLanguagesCache() {System.out.println("Evicting Languages Cache");}
-
     @CacheEvict(value = "graphQLGitHubCache", allEntries = true)
-    @Scheduled(fixedDelay = 3600000, initialDelay = 0)
+    @Scheduled(fixedDelay = 600000, initialDelay = 0)
     public void evictGitHubProjectsAndLanguagesCache() {System.out.println("Evicting GraphQL GitHub Cache");}
-
-    @CacheEvict(value = "messageBoardCache", allEntries = true)
-    @Scheduled(fixedDelay = 3600000, initialDelay = 0)
-    public void evictMessageBoardCache() {System.out.println("Evicting Message Board Cache");}
 }
