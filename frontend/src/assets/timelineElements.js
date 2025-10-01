@@ -32,7 +32,7 @@ const timelineElements = [
     title: "Software Developer Contractor - Elite Sedation",
     location: "Remote",
     description: "Optimized and automated the credential reminder system for throughput to HR and providers/PRNs",
-    date: "January 2025 - Present",
+    date: "January 2025 - April 2025",
     icon: "work",
     color: "red",
     tech: ["Node.js", "JavaScript", "SQL", "Python"],
@@ -46,6 +46,15 @@ const timelineElements = [
     icon: "school",
     color: "orange",
   },
+  {
+    id: 6,
+    title: "Started Development of TrueShotOdds",
+    location: "",
+    description: "Started developing an arbitrage/+EV bet finder that allows users to maximize profits between sportsbooks",
+    date: "July 2025 - Present",
+    icon: "work",
+    tech: ["React", "Spring Boot", "Docker", "AWS RDS", "Python"]
+  }
 ];
 
 export default timelineElements.reverse();
